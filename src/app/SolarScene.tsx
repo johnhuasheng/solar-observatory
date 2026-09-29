@@ -12,6 +12,7 @@ import { orbitPoint } from "./orbitalMath";
 import { OBSERVATORY_FACTS } from "./observatoryFacts";
 import { TOUR_ORBIT_MS, TOUR_TRAVEL_MS, orbitProgress, type TourStage } from "./tourTiming";
 import { pointOnSunArc, safeSunArc, type SunArc } from "./tourCamera";
+import { publicAsset } from "../lib/publicAsset";
 
 type Props = {
   selected: BodyId | null;
@@ -191,7 +192,7 @@ export default function SolarScene({ selected, focusToken, touring, tourPaused, 
     const scene=new THREE.Scene();scene.background=new THREE.Color("#020409");
     scene.backgroundIntensity=1.7;
     let skyDisposed=false;
-    const skyMap=new THREE.TextureLoader().load("/textures/2k_stars_milky_way.jpg",()=>{
+    const skyMap=new THREE.TextureLoader().load(publicAsset("textures/2k_stars_milky_way.jpg"),()=>{
       if(!skyDisposed)scene.background=skyMap;
     });
     skyMap.mapping=THREE.EquirectangularReflectionMapping;
@@ -401,7 +402,7 @@ export default function SolarScene({ selected, focusToken, touring, tourPaused, 
         if(!detailed||renderer.capabilities.maxTextureSize<resolution)return;
         detailPending=id;
         const asset=id==="venus"?"4k_venus_atmosphere":id==="jupiter"||id==="saturn"?`8k_${id}`:`4k_${id}`;
-        const texture=detailLoader.load(`/textures/${asset}.jpg`,loaded=>{
+        const texture=detailLoader.load(publicAsset(`textures/${asset}.jpg`),loaded=>{
           if(disposed||request!==detailRequest){loaded.dispose();return;}
           const surface=surfaces.get(id)!;
           const uniforms=(surface.material as THREE.ShaderMaterial).uniforms;

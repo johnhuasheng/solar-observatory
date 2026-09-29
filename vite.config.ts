@@ -4,6 +4,7 @@ import path from "node:path";
 
 export default defineConfig({
   plugins: [react()],
+  base: process.env.GITHUB_PAGES === "true" ? "/solar-observatory/" : "/",
   resolve: { alias: { "@": path.resolve(__dirname, "./src") } },
   build: { outDir: "网页", emptyOutDir: true },
 });

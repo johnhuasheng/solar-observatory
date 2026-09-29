@@ -1,5 +1,6 @@
 import * as THREE from "three";
 import type { BodyId } from "./planetData";
+import { publicAsset } from "../lib/publicAsset";
 
 type TexturePack = {
   maps: Partial<Record<BodyId, THREE.Texture>>;
@@ -19,7 +20,7 @@ export function makeTextures(): TexturePack {
   const load = (name: string, isColor = true) => {
     let texture!: THREE.Texture;
     const ext = name === "saturn_ring_alpha" ? "png" : "jpg";
-    const url = `/textures/2k_${name}.${ext}`;
+    const url = publicAsset(`textures/2k_${name}.${ext}`);
     pending.push(new Promise<void>((resolve, reject) => {
       texture = loader.load(url, () => resolve(), undefined, () => reject(new Error(`无法加载纹理 ${name}`)));
     }));

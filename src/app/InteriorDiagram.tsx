@@ -2,6 +2,7 @@ import type { BodyId } from "./planetData";
 import { BODY_BY_ID } from "./planetData";
 import { SCIENCE } from "./planetScience";
 import { SCIENCE_EN } from "./planetScienceEn";
+import { publicAsset } from "../lib/publicAsset";
 
 const textures: Record<BodyId,string> = {
   sun:"2k_sun.jpg", mercury:"4k_mercury.jpg", venus:"4k_venus_atmosphere.jpg",
@@ -38,7 +39,7 @@ export default function InteriorDiagram({ id, english }: { id: BodyId; english: 
       {id==="saturn"&&<g transform="rotate(-19 100 100)" fill="none" stroke="#e0d0ad"><ellipse cx="100" cy="100" rx="98" ry="30" strokeWidth="6" opacity=".15"/><ellipse cx="100" cy="100" rx="99" ry="30" strokeWidth="1.5" opacity=".5"/></g>}
       <circle cx="100" cy="100" r="87" fill="#09192b" stroke={`url(#${gradient}-rim)`} strokeWidth="1.5"/>
       <g clipPath={`url(#${clip})`}>
-        <image href={`/textures/${textures[id]}`} x="14" y="14" width="172" height="172" preserveAspectRatio="xMidYMid slice"/>
+        <image href={publicAsset(`textures/${textures[id]}`)} x="14" y="14" width="172" height="172" preserveAspectRatio="xMidYMid slice"/>
         <circle cx="100" cy="100" r="86" fill={`url(#${gradient}-light)`}/>
         {id==="earth"&&<circle cx="100" cy="100" r="85" fill="none" stroke="#6ebde2" strokeOpacity=".44" strokeWidth="2"/>}
         <g clipPath={`url(#${wedge})`}>
