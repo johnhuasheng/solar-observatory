@@ -1,0 +1,86 @@
+import type { BodyId } from "./planetData";
+import type { ScienceEntry } from "./planetScience";
+
+// English companion to the Chinese in-app explanations; source URLs stay with SCIENCE.
+export const SCIENCE_EN: Record<BodyId, Omit<ScienceEntry,"source">> = {
+  sun: {
+    opening:"The Sun contains nearly all the mass in the solar system. This hydrogen-and-helium star fuses hydrogen into helium in its core, supplying light and heat to the planets.",
+    surface:"Its visible photosphere is not solid ground. Convection creates a granular pattern, while magnetic activity produces sunspots, flares, and prominences.",
+    environment:"Above the photosphere lie the chromosphere and the tenuous corona. The corona extends outward, and the solar wind affects space throughout the solar system.",
+    interior:"Extreme heat and pressure enable fusion in the core. Energy is repeatedly absorbed and re-emitted through the radiative zone, then carried outward by rising plasma in the convective zone. The chromosphere and corona beyond the photosphere are an atmosphere, not a solid shell.",
+    notice:"The displayed brightness is reduced so that the photosphere and corona retain visible detail.",
+    layers:[{name:"Photosphere and atmosphere",detail:"Visible light leaves the photosphere; the corona extends beyond",color:"#f6b455"},{name:"Convective zone",detail:"Hot plasma rises and sinks",color:"#ec7936"},{name:"Radiative zone",detail:"Energy travels mainly by radiation",color:"#cf4935"},{name:"Core",detail:"Hydrogen fusion releases energy",color:"#ffd59b"}],
+  },
+  mercury: {
+    opening:"Mercury is the smallest planet and the closest to the Sun, completing an orbit in 88 Earth days. Without Venus's dense atmosphere, it loses heat rapidly at night despite its proximity to the Sun.",
+    surface:"Ancient terrain is covered with impact craters and long curved cliffs. The cliffs formed as Mercury's interior cooled and the planet contracted slightly.",
+    environment:"Mercury has a very thin exosphere rather than an Earth-like atmosphere. Solar wind and micrometeorites can release atoms from its surface.",
+    interior:"Mercury's iron-rich core is exceptionally large relative to the planet, with a relatively thin silicate mantle and crust outside. Its global magnetic field offers clues to the core's state, while contraction scarps record cooling of the interior.",
+    notice:"Look for craters of different sizes and scarps that cross older craters.",
+    layers:[{name:"Crust",detail:"Preserves craters and contraction scarps",color:"#a9a69f"},{name:"Rocky mantle",detail:"Surrounds the large metal core",color:"#776f69"},{name:"Metal core",detail:"Takes up a large share of the planet",color:"#d3a06b"}],
+  },
+  venus: {
+    opening:"Venus is comparable to Earth in size and density, yet a dense carbon-dioxide atmosphere drives a runaway greenhouse effect. It is the hottest planet at the surface, a striking example of how differently rocky worlds can evolve.",
+    surface:"In visible light, we mainly see thick cloud tops. Radar has mapped the volcanic plains, highlands, and complex surface hidden below.",
+    environment:"The atmosphere is mostly carbon dioxide, with sulfuric acid droplets in its clouds. Surface temperatures are around 467°C and pressure is much higher than on Earth.",
+    interior:"Radar mapping reveals extensive volcanic terrain but cannot see inside Venus. A silicate mantle and metallic core are expected beneath the crust; mantle convection, the core's state, and present volcanism remain under study. The outer yellow layer represents clouds and atmosphere.",
+    notice:"The yellow patterns depict cloud tops, not ground directly visible through the clouds.",
+    layers:[{name:"Dense atmosphere and clouds",detail:"Hide the ground in visible light",color:"#edd6a4"},{name:"Rocky crust",detail:"Radar reveals volcanoes and plains",color:"#b9895b"},{name:"Mantle",detail:"A hot rocky layer",color:"#985d41"},{name:"Metal core",detail:"Its size and state remain under study",color:"#e1a267"}],
+  },
+  earth: {
+    opening:"Earth is the only world with confirmed life and the only known planet with stable liquid oceans at its surface. Oceans, land, ice, and changing clouds shape its appearance from space.",
+    surface:"Oceans cover about 71% of Earth. Coastlines, islands, and straits mark intricate land-sea boundaries; moving crustal plates form mountains and trenches.",
+    environment:"Our atmosphere is mostly nitrogen and oxygen. Clouds reflect sunlight, while ocean and air exchange heat and water. Human lights can appear on the night side.",
+    interior:"Slow-moving plates make up the crust, above a rocky mantle that flows over geologic timescales. Deeper down, a liquid iron-rich outer core surrounds a solid inner core. Motion of conductive fluid in the outer core generates Earth's global magnetic field; the diagram groups ocean and crust together.",
+    notice:"Rotate Earth to inspect the Mediterranean and Red Sea, continental coastlines, cloud systems, and night lights.",
+    layers:[{name:"Crust and oceans",detail:"Plates, land, and liquid water",color:"#5d9a8b"},{name:"Mantle",detail:"Slowly moving silicate rock",color:"#ca7952"},{name:"Liquid outer core",detail:"Mainly iron-rich fluid",color:"#e0a45c"},{name:"Solid inner core",detail:"Metal under immense pressure",color:"#f4cf8c"}],
+  },
+  moon: {
+    opening:"The Moon is Earth's only natural satellite and is nearly tidally locked, so almost the same face is seen from Earth. With little atmosphere to erode its surface, it preserves a long record of impacts.",
+    surface:"The dark lunar maria are not seas: they are ancient impact basins filled with basaltic lava. Brighter highlands preserve many more craters.",
+    environment:"The Moon lacks a thick atmosphere capable of Earth-like weather, so impacts remain visible for a long time. Water ice exists in some permanently shadowed polar regions.",
+    interior:"Seismometers placed during Apollo gave important clues to the Moon's interior. It has a crust, silicate mantle, and relatively small iron-rich core. Ancient lava rose from within to fill impact basins, making the dark maria visible today.",
+    notice:"Compare dark maria with brighter highlands and look for craters superimposed on both.",
+    layers:[{name:"Lunar crust",detail:"Highlands and maria lie at the surface",color:"#c8c7c0"},{name:"Mantle",detail:"Mainly silicate rock",color:"#8f8e88"},{name:"Small core",detail:"Metal concentrated near the center",color:"#b99776"}],
+  },
+  mars: {
+    opening:"Iron-oxide-rich dust gives Mars its red appearance. Alongside giant volcanoes and canyons, ancient channels, deltas, and water-altered minerals record a wetter past.",
+    surface:"Olympus Mons is the solar system's largest volcano. Valles Marineris stretches thousands of kilometers, while polar ice caps change with the seasons.",
+    environment:"The thin atmosphere is mostly carbon dioxide. Though the surface is cold and dry today, channels, minerals, and sediments indicate liquid water in the past.",
+    interior:"Mars consists of a rocky crust, silicate mantle, and iron-rich metallic core. NASA's InSight recorded marsquakes that help estimate layer thicknesses, core size, and deep material properties. Detailed models continue to be refined.",
+    notice:"Inspect the transition between rusty plains, dark terrain, and bright polar caps.",
+    layers:[{name:"Crust",detail:"Volcanoes, canyons, and craters",color:"#d77d58"},{name:"Rocky mantle",detail:"Between crust and core",color:"#a84e3b"},{name:"Metal core",detail:"Contains iron and other elements",color:"#dda76a"}],
+  },
+  jupiter: {
+    opening:"Jupiter is the largest planet, made primarily of hydrogen and helium. Its bright and dark bands are fast-moving winds and clouds rather than solid terrain; rapid rotation and internal heat drive the weather.",
+    surface:"There is no solid surface on which to stand. The Great Red Spot is a long-lived storm whose shape and size change over time.",
+    environment:"The outer planet is mostly hydrogen and helium. Rapid rotation and internal heat drive complex weather, vortices, and polar auroras.",
+    interior:"As pressure rises with depth, hydrogen passes from gas to dense fluid and becomes electrically conducting metallic hydrogen. Juno's gravity measurements suggest heavy elements may extend through a broad deep region, rather than a neatly bounded core. The drawn boundaries are illustrative.",
+    notice:"Look in the southern hemisphere for the Great Red Spot and curling pale cloud bands.",
+    layers:[{name:"Clouds and atmosphere",detail:"Visible bands and storms",color:"#d9c4a7"},{name:"High-pressure hydrogen",detail:"Pressure increases with depth",color:"#b88965"},{name:"Metallic hydrogen",detail:"Conductive at extreme pressure",color:"#816d80"},{name:"Core region",detail:"Its structure remains under study",color:"#b7a08b"}],
+  },
+  saturn: {
+    opening:"Saturn is the solar system's second-largest planet, made mostly of hydrogen and helium. Its bright, complex rings contain countless icy and rocky pieces on separate orbits, not a solid disk attached to the planet.",
+    surface:"Saturn has no solid surface. Pale cloud bands and storms occupy its upper atmosphere. The rings are extremely thin on an astronomical scale and contain distinct gaps.",
+    environment:"Ring particles orbit at different speeds. Saturn also has complex weather, a magnetic field, and a diverse collection of moons.",
+    interior:"Saturn has no defined solid surface. Its hydrogen-helium fluid becomes denser inward, with conducting metallic hydrogen at high pressure and possibly a region enriched in heavy elements near the center. Cassini's gravity data and ring oscillations constrain models, but the deep layers are not hard, sharply separated shells.",
+    notice:"Tilt your view to inspect ring brightness and the Cassini Division; the rings are not a solid disk.",
+    layers:[{name:"Clouds and atmosphere",detail:"Pale golden bands",color:"#e3d5ac"},{name:"High-pressure hydrogen",detail:"Gas transitions to dense fluid",color:"#bca37f"},{name:"Deep metallic hydrogen",detail:"An extreme-pressure state",color:"#8c8491"},{name:"Core region",detail:"Deep structure remains uncertain",color:"#b49a82"}],
+  },
+  uranus: {
+    opening:"Uranus has an axial tilt near 98 degrees and rolls around the Sun almost on its side. Its roughly 84-year orbit gives each polar region extended periods of sunlight and darkness.",
+    surface:"Methane absorbs red light, creating a cyan appearance. We see clouds and haze rather than solid ground; Uranus also has dark rings.",
+    environment:"Its outer atmosphere contains hydrogen, helium, and methane. Voyager 2 remains the only spacecraft to have flown close to Uranus.",
+    interior:"'Ice giant' does not imply a shell of familiar solid ice. A hydrogen-helium-methane atmosphere may transition gradually to high-pressure fluids rich in water, ammonia, and methane, with rockier material deeper down. The mass distribution and boundaries remain inferred largely from gravity and physical models.",
+    notice:"Study the pale cyan disk and tilted narrow rings. Subtle bands better match its visible-light appearance.",
+    layers:[{name:"Methane-rich atmosphere",detail:"Absorbs red light and looks cyan",color:"#9bd5d5"},{name:"High-pressure fluids",detail:"May contain water, ammonia, methane",color:"#5b9fb0"},{name:"Deep core region",detail:"Composition and boundaries uncertain",color:"#8c8d91"}],
+  },
+  neptune: {
+    opening:"Neptune is the most distant planet, taking about 165 Earth years to orbit the Sun. Atmospheric methane absorbs red light, while changing high clouds and dark storms reveal a dynamic world.",
+    surface:"Like Uranus, Neptune lacks a clearly defined solid surface. We see its atmosphere and high methane-ice clouds.",
+    environment:"The atmosphere is mainly hydrogen and helium with some methane. Observed winds can exceed 2,000 km/h, making its weather highly active.",
+    interior:"Beneath the blue clouds, hydrogen, helium, and methane enter increasingly dense fluid states. Deeper material may be rich in water, ammonia, and methane, with rockier material near the center. No direct image shows these depths: their composition and boundaries are inferred from limited observations and models.",
+    notice:"Find pale clouds against the deep-blue atmosphere. Storm locations change over time.",
+    layers:[{name:"Clouds and atmosphere",detail:"Blue color and fast weather",color:"#477ac8"},{name:"High-pressure fluids",detail:"May contain water, ammonia, methane",color:"#315687"},{name:"Deep core region",detail:"More exploration is needed",color:"#6c788d"}],
+  },
+};

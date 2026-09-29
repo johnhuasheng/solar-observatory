@@ -1,0 +1,3 @@
+太阳系天体纹理：Solar System Scope（CC BY 4.0）。
+纹理包含在 public\textures 和预构建的 网页\textures 中。
+项目源码中的 planetTextures.ts 保留了素材说明。
