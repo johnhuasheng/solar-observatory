@@ -11,5 +11,8 @@
 源码位于 src\app，贴图位于 public\textures。修改源码后，双击「重新构建网页.cmd」刷新「网页」目录，再刷新浏览器；也可重新运行启动器打开新页面。
 重新构建需要 Node.js 22.13 或更新版本；第一次会联网安装依赖。平时只启动网页不需要这些依赖。
 本地文件与已发布的在线网站是两个版本，修改本地文件不会自动更新在线网站。
+在线体验地址：https://johnhuasheng.github.io/solar-observatory/
+公开源码地址：https://github.com/johnhuasheng/solar-observatory
+如需发布更新，先提交并推送源码，再到 GitHub Actions 手动运行「Publish website to GitHub Pages」。
 
 当前版本包含太阳系全景的观察挑战，以及各星球的科普资料与剖面图。

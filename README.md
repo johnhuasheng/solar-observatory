@@ -4,7 +4,9 @@
 
 ## 在线体验
 
-在线体验地址将在首次公开发布后补充。在线版与本地版相互独立；更新本地文件不会自动发布到网上。
+[立即打开在线观测站](https://johnhuasheng.github.io/solar-observatory/)。无需下载或注册；使用现代浏览器并开启 WebGL。
+
+在线版与本地版相互独立。更新本地文件或推送源码不会自动发布到网上；仓库所有者可在 GitHub Actions 中手动运行 `Publish website to GitHub Pages` 工作流发布新版本。
 
 ## 本地使用
 
@@ -26,4 +28,3 @@ npm run build
 项目自身代码采用 [MIT License](LICENSE)。贴图来自 Solar System Scope，采用 CC BY 4.0；请阅读 [第三方素材说明](THIRD_PARTY_NOTICES.md)。
 
 天体大小、距离和部分轨道参数为便于观察做了视觉化处理，并非实时星历。科普资料中包含指向 NASA 等外部网站的链接，打开这些链接需要联网。
-
